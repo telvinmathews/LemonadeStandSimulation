@@ -14,7 +14,6 @@ namespace LemonadeStand_3DayStarter
         // constructor (SPAWNER)
         static Item()
         {
-            
         }
 
         // member methods (CAN DO)

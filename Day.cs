@@ -12,7 +12,7 @@ namespace LemonadeStand_3DayStarter
         public Weather weather;
         public List<Customer> customers;
 
-        //conductor (spawns0
+        //conductor (spawns)
         //Member methods (can do)
     }
 }
