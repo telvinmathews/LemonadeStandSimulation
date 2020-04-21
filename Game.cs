@@ -17,6 +17,7 @@ namespace LemonadeStand_3DayStarter
         Customer customer;
         Weather weather;
         Pitcher pitcher;
+        Recipe recipe;
 
 
 
@@ -31,13 +32,26 @@ namespace LemonadeStand_3DayStarter
             customer = new Customer();
             weather = new Weather();
             pitcher = new Pitcher();
+            recipe = new Recipe();
         }
         //Member method (can do)
         public void CustomerBuyLemonad()
         {
-            if ((weather.condition == "sunny" || weather.temperature >= 60) && pitcher.cupsLeftInPitcher > 0)
+            if ((weather.condition == "sunny" || weather.temperature >= 65) && pitcher.cupsLeftInPitcher > 0 && recipe.pricePerCup <= 40)
             {
                 customer.willBuyLemonade = true;
+            }
+            else if ((weather.condition == "rain" || weather.temperature < 65) && pitcher.cupsLeftInPitcher > 0 && recipe.pricePerCup <= 21)
+            {
+                customer.willBuyLemonade = true;
+            }
+            else if ((weather.condition == "cloudy" || weather.temperature >= 60) && pitcher.cupsLeftInPitcher > 0 && recipe.pricePerCup <= 30)
+            {
+                customer.willBuyLemonade = true;
+            }
+            else
+            {
+                customer.willBuyLemonade = false;
             }
 
         }

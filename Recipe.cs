@@ -9,10 +9,10 @@ namespace LemonadeStand_3DayStarter
     class Recipe
     {
         //member variables (has a)
-        int amountOfLemons;
-        int amountOfSugarCubes;
-        int amountOfIceCubes;
-        double pricePerCup;
+        public int amountOfLemons;
+        public int amountOfSugarCubes;
+        public int amountOfIceCubes;
+        public double pricePerCup;
         //condutor (spawns)
         //member methods (can do)
     }
