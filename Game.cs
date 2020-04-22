@@ -35,13 +35,46 @@ namespace LemonadeStand_3DayStarter
             recipe = new Recipe();
         }
         //Member method (can do)
+        public void ProbilityToBuyLemonade()
+        {
+            //if weather is "sunny" && price per cup is > 25
+                //chance of buying lemonade is decreased by 20 
+                //willingness to pay decrease to 30
+            //if weather is "rainnig  && price per cup is > 20
+                //chance of buying lemonade is decreased by 50 
+                //willingness to pay is 20
+            // if weather is "cloudy" && price per cup is > 20
+                //chance of buying lemonade is decreased by 30
+                //willingness to pay is 25
+
+            if (weather.condition == "sunny" && recipe.pricePerCup > 20)
+            {
+                customer.chanceOfBuyingLemonade = 80;
+                customer.willingToPay = 30;
+            }
+            else if (weather.condition == "rainnig" && recipe.pricePerCup > 20)
+            {
+                customer.chanceOfBuyingLemonade = 50;
+                customer.willingToPay = 20;
+            }
+            else if (weather.condition == "cloudy" && recipe.pricePerCup > 20)
+            {
+                customer.chanceOfBuyingLemonade = 70;
+                customer.willingToPay = 25;
+            }
+            else
+            {
+                customer.chanceOfBuyingLemonade = 100;
+                customer.willingToPay = 40;
+            }
+        }
         public void CustomerBuyLemonad()
         {
             if ((weather.condition == "sunny" || weather.temperature >= 65) && pitcher.cupsLeftInPitcher > 0 && recipe.pricePerCup <= 40)
             {
                 customer.willBuyLemonade = true;
             }
-            else if ((weather.condition == "rain" || weather.temperature < 65) && pitcher.cupsLeftInPitcher > 0 && recipe.pricePerCup <= 21)
+            else if ((weather.condition == "raining" || weather.temperature < 65) && pitcher.cupsLeftInPitcher > 0 && recipe.pricePerCup <= 21)
             {
                 customer.willBuyLemonade = true;
             }

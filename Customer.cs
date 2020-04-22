@@ -13,6 +13,8 @@ namespace LemonadeStand_3DayStarter
         public string name;
         Random random = new Random();
         public bool willBuyLemonade;
+        public int chanceOfBuyingLemonade;
+        public int willingToPay;
         
 
         //conductor (spawn)
@@ -22,20 +24,20 @@ namespace LemonadeStand_3DayStarter
             names = new List<string>() {"pride", "envy", "greed"};
             name = names[random.Next(0,names.Count - 1)];
             willBuyLemonade = false;
+            chanceOfBuyingLemonade = 100;
+            willingToPay = 40;
             
         }
 
         //member method (can do)
 
-       /* public bool BuyLemonade(Customer customer)
+        public bool BuyLemonade(Customer customer)
         {
             if (customer.willBuyLemonade == false)
             {
                 customer.willBuyLemonade = true;
             }
             return customer.willBuyLemonade;
-        }*/
-
-        
+        }
     }
 }
