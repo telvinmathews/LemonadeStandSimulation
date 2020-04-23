@@ -13,6 +13,11 @@ namespace LemonadeStand_3DayStarter
         public List<Customer> customers;
 
         //conductor (spawns)
+        public Day()
+        {
+            weather = new Weather();
+            customers = new List<Customer>();
+        }
         //Member methods (can do)
     }
 }
