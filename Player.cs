@@ -15,6 +15,7 @@ namespace LemonadeStand_3DayStarter
         public Recipe recipe;
         public Pitcher pitcher;
 
+
         // constructor (SPAWNER)
         public Player()
         {
@@ -26,6 +27,16 @@ namespace LemonadeStand_3DayStarter
 
         // member methods (CAN DO)
 
-        
+        public void SetRecipe()
+        {
+            Console.WriteLine("How many lemons would you like per pitcher?");
+            recipe.amountOfLemons = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("How many sugar cubes would you like per pitcher?");
+            recipe.amountOfSugarCubes = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("How many Ice cubes would you like per pitcher?");
+            recipe.amountOfIceCubes = Convert.ToInt32(Console.ReadLine());
+        }
+
+
     }
 }

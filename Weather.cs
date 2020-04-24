@@ -18,30 +18,32 @@ namespace LemonadeStand_3DayStarter
         public Weather()
         {
             weatherConditions = new List<string>() { "sunny", "raining", "cloudy" };
-            GenerateRandomTemperature();
-            GenrateRandomCondition();
+            temperature = GenerateRandomTemperature();
+            condition = GenrateRandomCondition();
         }
 
 
         // Member methods (can do)
 
         //random temperature generator
-        public void GenerateRandomTemperature()
+        public int GenerateRandomTemperature()
         {
             //generate a random number bettween 0 and 120 and display it
             Random random = new Random();
             temperature = random.Next(120);
-            Console.WriteLine(temperature); 
+            Console.WriteLine(temperature);
+            return temperature;
         }
 
         //get condition
 
-        public void GenrateRandomCondition()
+        public string GenrateRandomCondition()
         {
             Random random = new Random();
             int index = random.Next(weatherConditions.Count);
             condition = weatherConditions[index];
             Console.WriteLine(condition);
+            return condition;
         }
 
 

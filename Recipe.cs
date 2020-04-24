@@ -20,14 +20,6 @@ namespace LemonadeStand_3DayStarter
         }
         //member methods (can do)
 
-        public void SetRecipe()
-        {
-            Console.WriteLine("How many lemons would you like per pitcher?");
-            amountOfLemons = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine( "How many sugar cubes would you like per pitcher?");
-            amountOfSugarCubes = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("How many Ice cubes would you like per pitcher?");
-            amountOfIceCubes = Convert.ToInt32(Console.ReadLine());
-        }
+       
     }
 }

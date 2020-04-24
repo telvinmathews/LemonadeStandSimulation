@@ -47,7 +47,7 @@ namespace LemonadeStand_3DayStarter
                 "At the end of the game, you'll see how much money you made.\n" +
                 " Write it down and play again to try and beat your score!");
         }
-        public void ProbilityToBuyLemonade()
+        /*public void ProbilityToBuyLemonade()
         {
             //if weather is "sunny" && price per cup is > 25
                 //chance of buying lemonade is decreased by 20 
@@ -61,7 +61,6 @@ namespace LemonadeStand_3DayStarter
 
             if (weather.condition == "sunny" && recipe.pricePerCup > 20)
             {
-                customer.chanceOfBuyingLemonade = 80;
                 customer.willingToPay = 30;
             }
             else if (weather.condition == "rainnig" && recipe.pricePerCup > 20)
@@ -79,26 +78,26 @@ namespace LemonadeStand_3DayStarter
                 customer.chanceOfBuyingLemonade = 100;
                 customer.willingToPay = 40;
             }
-        }
+        }*/
 
         
         public void CustomerBuyLemonad()
         {
-            if ((weather.condition == "sunny" || weather.temperature >= 65) && pitcher.cupsLeftInPitcher > 0 && recipe.pricePerCup <= 40)
+            if ((weather.condition == "sunny" || weather.temperature >= 75) && pitcher.cupsLeftInPitcher > 0 && recipe.pricePerCup <= 35)
             {
-                customer.willBuyLemonade = true;
+                customer.BuyLemonade(); 
             }
             else if ((weather.condition == "raining" || weather.temperature < 65) && pitcher.cupsLeftInPitcher > 0 && recipe.pricePerCup <= 21)
             {
-                customer.willBuyLemonade = true;
+                customer.BuyLemonade();
             }
             else if ((weather.condition == "cloudy" || weather.temperature >= 60) && pitcher.cupsLeftInPitcher > 0 && recipe.pricePerCup <= 30)
             {
-                customer.willBuyLemonade = true;
+                customer.BuyLemonade();
             }
             else
             {
-                customer.willBuyLemonade = false;
+                customer.NotBuyLemonade();
             }
         }
 
@@ -113,9 +112,9 @@ namespace LemonadeStand_3DayStarter
             {
                 Day day = new Day();
                 GoToStore();
-                recipe.SetRecipe();
-                ProbilityToBuyLemonade();
+                player.SetRecipe();
                 CustomerBuyLemonad();
+                //ProbilityToBuyLemonade();
             }
             //loop for how many days i want game to run
             //create day
